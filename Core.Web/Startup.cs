@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
+using Core.Web.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using Microsoft.AspNetCore.Mvc.Internal;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Core.Web
@@ -18,7 +22,8 @@ namespace Core.Web
         {
             services.AddMvc(o =>
             {
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddMyMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
