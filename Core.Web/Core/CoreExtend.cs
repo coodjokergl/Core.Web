@@ -22,10 +22,7 @@ namespace Core.Web.Core
             }
 
             //注入自己的激活器
-            builder.Services.Replace(ServiceDescriptor.Transient<IControllerActivator, CoreControllerActivator>());
-
-            builder.Services.Replace(ServiceDescriptor.Transient<IActionSelector, CoreActionSelector>());
-            
+            builder.Services.Replace(ServiceDescriptor.Transient<IControllerActivator, CoreControllerActivator>());           
 
             return builder;
         }

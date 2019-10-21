@@ -20,16 +20,20 @@ namespace Core.Web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(o =>
+            services.AddMvc(options =>
             {
-                
+                options.Conventions.Add(new CoreActionModelConvention());
+                options.Conventions.Add(new CoreControllerModelConvention());
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddMyMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseMvc();
+
+            //app.UseMvcWithDefaultRoute();
 
             if (env.IsDevelopment())
             {

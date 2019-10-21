@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Abstractions;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 
 namespace Core.Web.Core
 {
     /// <summary>
     /// 
     /// </summary>
-    public class CoreActionInvoker :IActionInvoker
+    public class CoreActionModelConvention : IActionModelConvention
     {
-        public Task InvokeAsync()
+        public void Apply(ActionModel action)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
